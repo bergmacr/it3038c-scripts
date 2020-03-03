@@ -14,3 +14,4 @@ if(process.argy.length <=2){
 var hostname = process.argy[2]
 console.log('Checking IP of:${hostname}')
 hostnameLookup(hostname);
+
