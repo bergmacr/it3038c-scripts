@@ -1,0 +1,25 @@
+import requests, re
+from bs4 import BeautifulSoup
+
+data = requests.get("https://www.macys.com/shop/product/polo-ralph-lauren-mens-classic-fit-linen-shirt?ID=9524093&CategoryID=20626&swatchColor=Summer%20Royal").content
+soup = BeautifulSoup(data, 'html.parser')
+
+
+span = soup.find("h1", {"class":"pdp-product-title"})
+title = span.text
+span = soup.find("div", {"class":"main-price"})
+price = span.text
+
+print("Item %s has price of %s" % (title, price))
+
+#Example of output
+#(webscraping) PS C:\it3038c-scripts\python> python .\Lab8.py
+#
+#Item
+#                   Polo Ralph Lauren Men's Classic Fit Linen Shirt
+#				has price of
+#
+#                          $98.50            
+#
+#
+#
