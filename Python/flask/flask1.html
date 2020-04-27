@@ -1,0 +1,7 @@
+{% extends "weblayout.html" %}
+
+{% block content %}
+<p><em>What is your name? Please enter it</em>
+<form action="/hello" method="POST"><input name="myName"><input type="submit" value="Submit"></form>
+</p>
+{% endblock %}
